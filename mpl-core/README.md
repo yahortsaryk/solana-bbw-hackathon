@@ -1,12 +1,15 @@
 # MPL-CORE Sample
 
-## Blocks of code
-
 ### Prerequirements
 
-Install `ts-node` https://www.npmjs.com/package/ts-node
+Install depoendencies and [ts-node](https://www.npmjs.com/package/ts-node) execution engine.
 
-### Run 
+```
+npm i
+npm install -g ts-node
+```
+
+### Run the sample script. Do not forget to replace the private key of the payer account
 
 ```
 npx ts-node app.ts
