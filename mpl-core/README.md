@@ -2,10 +2,10 @@
 
 ### Prerequirements
 
-Install depoendencies and [ts-node](https://www.npmjs.com/package/ts-node) execution engine.
+Install dependencies and [ts-node](https://www.npmjs.com/package/ts-node) execution engine.
 
 ```
-npm i
+yarn
 npm install -g ts-node
 ```
 
