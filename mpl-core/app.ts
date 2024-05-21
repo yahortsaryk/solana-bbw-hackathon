@@ -12,7 +12,7 @@ import {
     ruleSet,
     
 } from '@metaplex-foundation/mpl-core'
-import { TransactionBuilderSendAndConfirmOptions, generateSigner, signerIdentity, createSignerFromKeypair, sol } from '@metaplex-foundation/umi';
+import { TransactionBuilderSendAndConfirmOptions, generateSigner, signerIdentity, createSignerFromKeypair, publicKey, sol } from '@metaplex-foundation/umi';
 
 const umi = createUmi('https://api.devnet.solana.com', 'processed').use(mplCore())
 
@@ -101,7 +101,7 @@ async function main() {
 
     // 6. Transfer an asset
     const recipient = generateSigner(umi);
-    console.log('6. Fetching Assets by collection:', recipient.publicKey);
+    console.log('6. Transferring Asset to recipient:', recipient.publicKey);
     const step6Res = await transferV1(umi, {
         asset: asset.publicKey,
         newOwner: recipient.publicKey,
@@ -111,7 +111,7 @@ async function main() {
 
      // 7. Verifying transfer
      const transferredAsset = await fetchAssetV1(umi, asset.publicKey);
-     console.log('7. Verifying transfer for:', recipient.publicKey);
+     console.log('7. Verifying Asset transfer to recipient:', recipient.publicKey);
      if (transferredAsset.owner.toString() !== recipient.publicKey.toString()) {
          throw new Error('Transfer failed');
      } else {
